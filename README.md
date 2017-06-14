@@ -87,10 +87,8 @@ The framework is created to show content in a "lightbox"-way, but in a different
 
 ============ Installation ============
 
-1.	Make sure there is a connection to a jQuery file
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-2.	Make a connection with the contentbox.js
-<script src="framework.js"></script>
-3.	Place the HTML items from above in your body
-4.	Add your own settings for the styling of contentbox.js
+1.	Make sure there is a connection to a jQuery file. - <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+2.	Make a connection with the contentbox.js. - <script src="framework.js"></script>
+3.	Place the HTML items from above in your body.
+4.	Add your own settings for the styling of contentbox.js.
 
