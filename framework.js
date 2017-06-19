@@ -51,8 +51,6 @@ $(function(Box)
 
                 $('#close').fadeIn('slow');
 
-                
-
            });
     
 // Dit is de functie wanneer de close button geactiveerd wordt.
@@ -119,9 +117,11 @@ function loadTekstueel(id) {
   })
   .always (function(jqXGROrData, textStatus, jqXHROrErrorThrown){
     //  Deze code wordt altijd uitgevoerd, of het nu goed gaat of niet
-    alert (jqXGROrData);
+    alert (textStatus);
   });
+
   return false;
+}
 
 
 
