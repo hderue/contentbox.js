@@ -29,14 +29,12 @@ Tag for HTML Contentbox element
 Tags for HTML items clicked
 ```
 <article>
-	<div onclick="clicked(this);" class="item" id="1"></div>
-	<div onclick="clicked(this);" class="item" id="2"></div>
-	<div onclick="clicked(this);" class="item" id="3"></div>
-	<div onclick="clicked(this);" class="item" id="4"></div>
-	<div onclick="clicked(this);" class="item" id="5"></div>
-	<div onclick="clicked(this);" class="item" id="6"></div>
-	<div onclick="clicked(this);" class="item" id="7"></div>
-	<div onclick="clicked(this);" class="item" id="8"></div>
+	<div  onclick="clicked(this);" class="item" id="1"><img src="images/doelgroep.png"></div>
+	<div  class="item" id="2"><img src="images/concepting.png"></div>
+	<div  class="item" id="3"><img src="images/framework.png"></div>
+	<div  class="item" id="4"><img src="images/framework-kennis.png"></div>
+	<div  class="item" id="5"><img src="images/SEO.png"></div>
+	<div  class="item" id="6"><img src="images/ysp2.png"></div>
 </article>
 
 ```
@@ -48,12 +46,12 @@ This are the default settings given to the contentbox
 ```
 var hrSettings = {
 
-width:              70, //kies tussen 25 en 100 
+width:              50, //kies tussen 25 en 100 
 opacity:            0.2, //kies een opacity tussen 0.0 en 1.0
 speed:              500, // kies een snelheid voor de animatie
-slideEffect:        'fromLeft', // kies tussen fromLeft of fromRight
-closePosition:      'closeLeft', // kies tussen closeLeft en closeRight
-background:         '#324634',
+slideEffect:        'fromRight', // kies tussen fromLeft of fromRight
+closePosition:      'closeRight', // kies tussen closeLeft en closeRight
+background:         '#e3e3e3',
 ShadingBox:         'ShadingBox'
 
 };
@@ -79,6 +77,7 @@ You can adjust the settings to your own preferences, just change add the followi
 
 ============ Demo ============
 
+www.hderue.nl/Framework/
 
 ============ Motivation ============
 
@@ -91,4 +90,5 @@ The framework is created to show content in a "lightbox"-way, but in a different
 2.	Make a connection with the contentbox.js. - <script src="framework.js"></script>
 3.	Place the HTML items from above in your body.
 4.	Add your own settings for the styling of contentbox.js.
+5.	Enjoy!
 
