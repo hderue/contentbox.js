@@ -67,7 +67,36 @@ var hdrContentbox = (function () {
 
     	var message = 'De contentbox is succesvol gesloten';
     	console.log(message); 
-	};      
+	};   
+
+	var _loadText = function()
+	{
+		var jqxhr = $.getJSON('text.json', function(){
+		      format: "json"
+		 })
+		.done (function(returnData, textStatus, jqXHR){
+		// Deze code wordt uitgevoerd wanneer de data succecvol is opgehaald, de data is returnData (geformateerd als array)
+		  $.each(returnData, function(i, article){
+			// article.id
+		    if (article.id == item.id) {
+		    	alert ("deze data " + article.title + " mag geladen worden in de juist div");
+		        //document.getElementById("beschrijving").innerHTML=data.firstName;
+		    }
+     	  });
+
+		  })
+		  .fail (function(jqXHR, textStatus, errorThrown){
+		    // Deze code wordt uitgevoerd wanneer er iets misgegaan is met het JSON bestand ophalen
+		    alert (errorThrown);
+
+		  })
+		  .always (function(jqXHROrData, textStatus, jqXHROrErrorThrown){
+		    //  Deze code wordt altijd uitgevoerd, of het nu goed gaat of niet
+		    alert (textStatus);
+		  });
+
+		  return false;
+	};	  
 
 	$(document).on("click", ".item", openContentbox)
 			   .on("click", "#close", closeContentbox);
