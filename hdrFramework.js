@@ -1,3 +1,7 @@
+//Author: Hobie de Rue
+//Author URL: https://www.hderue.nl/
+//Author Email: hobiederue@gmail.com
+
 var hdrContentbox = (function () {
   
 
@@ -19,14 +23,16 @@ var hdrContentbox = (function () {
 	}
 
 	//Global variables for all functions
-	var shade        =  $('#schaduw');
-	var content      =  $('#content');
-	var description  =  $('#beschrijving');
-	var close        =  $('#close');
+	var shade        =  $('#schaduw'),
+		content      =  $('#content'),
+		description  =  $('#beschrijving'),
+		close        =  $('#close');
 	
-	
-	var openContentbox = function()
-	{
+
+		
+	var contentbox = {
+	 openContentbox: function()
+	 {
 		// Voeg slide richting toe aan contentbox
 		content.addClass(hrSettings.slideEffect).animate({
       	width: hrSettings.width+"%"
@@ -46,12 +52,12 @@ var hdrContentbox = (function () {
 		shade.addClass(hrSettings.ShadingBox).fadeIn(500);;
    	
     	description.delay(500).fadeIn(500);   
-
-    	var message = 'De contentbox is succesvol geopend';
+	
+    	var message = 'De contentbox is succesvol geopend';	
     	console.log(message); 
-	};
+	},
 
-	var closeContentbox = function()
+	closeContentbox: function()
 	{
 	 	content.animate({
       	width: -hrSettings.width+"%",
@@ -67,6 +73,7 @@ var hdrContentbox = (function () {
 
     	var message = 'De contentbox is succesvol gesloten';
     	console.log(message); 
+	}
 	};   
 
 	var _loadText = function()
@@ -101,6 +108,8 @@ var hdrContentbox = (function () {
 	$(document).on("click", ".item", openContentbox)
 			   .on("click", "#close", closeContentbox);
 
+			   return openContentbox;
+			   console.log(op)
 
 
 
