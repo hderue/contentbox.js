@@ -23,5 +23,26 @@ var hdrContentbox = (function () {
 	var description  =  $('#beschrijving');
 	var close        =  $('#close');
 
+	var Style = function (){
+		// Voeg slide richting toe aan contentbox
+		content.addClass(hrSettings.slideEffect);
+
+		// Plaats de close button binnen de contentbox
+		close.addClass(hrSettings.closePosition);
+
+		// Voeg background color toe aan contentbox
+		content.css("background-color", hrSettings.background);
+
+		// Voeg background color toe aan contentbox
+		close.css("background-color", hrSettings.background);
+
+		// Voegt de schaduw om de content heen
+		shade.addClass(hrSettings.ShadingBox);
+	};
+
+
+
+console.log(Style);
+
 
 })();
