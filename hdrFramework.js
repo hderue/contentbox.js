@@ -40,7 +40,25 @@ var hdrContentbox = (function () {
 		shade.addClass(hrSettings.ShadingBox);
 	};
 
+	function openContentbox ()
+	{
+ 		shade.fadeIn(500);
 
+    content.animate({
+      width: hrSettings.width+"%"
+      }, hrSettings.speed, function() {
+      });
+
+    description.delay(500).fadeIn(500);
+
+
+    close.fadeIn(500);
+	};
+
+	
+
+
+$(document).on("click", ".item", openContentbox)
 
 console.log(Style);
 
