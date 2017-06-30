@@ -1,5 +1,7 @@
 var hdrContentbox = (function () {
   
+
+  	// Default settings for the framework, they remain global because we need them in multiple functions
   	var hrSettings = {
 		width:              50, //kies tussen 25 en 100 
 		opacity:            0.2, //kies een opacity tussen 0.0 en 1.0
@@ -9,6 +11,17 @@ var hdrContentbox = (function () {
 		background:         '#e3e3e3',
 		ShadingBox:         'ShadingBox'
 	};
+
+	//  If the user fills in custom settings in HTML they will override the default settings
+	if(typeof(hrCustoms) !== 'undefined') {
+    // Adds default settings to custom settings if not filled in, to make the styling complete
+    $.extend(hrSettings, hrCustoms);
+	}
+
+	var shade        =  $('#schaduw');
+	var content      =  $('#content');
+	var description  =  $('#beschrijving');
+	var close        =  $('#close');
 
 
 })();
