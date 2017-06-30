@@ -30,9 +30,8 @@ var hdrContentbox = (function () {
 	
 
 		
-	var contentbox = {
-	 openContentbox: function()
-	 {
+	var openContentbox = function()
+	{
 		// Voeg slide richting toe aan contentbox
 		content.addClass(hrSettings.slideEffect).animate({
       	width: hrSettings.width+"%"
@@ -55,9 +54,9 @@ var hdrContentbox = (function () {
 	
     	var message = 'De contentbox is succesvol geopend';	
     	console.log(message); 
-	},
+	};
 
-	closeContentbox: function()
+	var closeContentbox = function()
 	{
 	 	content.animate({
       	width: -hrSettings.width+"%",
@@ -73,7 +72,6 @@ var hdrContentbox = (function () {
 
     	var message = 'De contentbox is succesvol gesloten';
     	console.log(message); 
-	}
 	};   
 
 	var _loadText = function()
@@ -108,8 +106,6 @@ var hdrContentbox = (function () {
 	$(document).on("click", ".item", openContentbox)
 			   .on("click", "#close", closeContentbox);
 
-			   return openContentbox;
-			   console.log(op)
 
 
 
