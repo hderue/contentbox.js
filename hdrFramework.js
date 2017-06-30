@@ -18,13 +18,14 @@ var hdrContentbox = (function () {
     $.extend(hrSettings, hrCustoms);
 	}
 
+	//Global variables for all functions
 	var shade        =  $('#schaduw');
 	var content      =  $('#content');
 	var description  =  $('#beschrijving');
 	var close        =  $('#close');
 	
 	
-	function openContentbox ()
+	var openContentbox = function()
 	{
 		// Voeg slide richting toe aan contentbox
 		content.addClass(hrSettings.slideEffect).animate({
@@ -50,7 +51,7 @@ var hdrContentbox = (function () {
     	console.log(message); 
 	};
 
-	function closeContentbox ()
+	var closeContentbox = function()
 	{
 	 	content.animate({
       	width: -hrSettings.width+"%",
@@ -68,14 +69,10 @@ var hdrContentbox = (function () {
     	console.log(message); 
 	};      
 
+	$(document).on("click", ".item", openContentbox)
+			   .on("click", "#close", closeContentbox);
 
 
 
 
-$(document).on("click", ".item", openContentbox)
-			.on("click", "#close", closeContentbox);
-
-
-
-
-})();
+}());
