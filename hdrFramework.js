@@ -46,14 +46,34 @@ var hdrContentbox = (function () {
    	
     	description.delay(500).fadeIn(500);   
 
-    	var message = 'succes';
+    	var message = 'De contentbox is succesvol geopend';
     	console.log(message); 
 	};
+
+	function closeContentbox ()
+	{
+	 	content.animate({
+      	width: -hrSettings.width+"%",
+      	background: hrSettings.background
+      	}, hrSettings.speed, function() {
+      	});
+
+    	shade.fadeOut(500);
+
+    	description.fadeOut(500);
+               
+    	close.fadeOut(500);
+
+    	var message = 'De contentbox is succesvol gesloten';
+    	console.log(message); 
+	};      
+
 
 
 
 
 $(document).on("click", ".item", openContentbox)
+			.on("click", "#close", closeContentbox);
 
 
 
