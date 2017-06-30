@@ -22,10 +22,15 @@ var hdrContentbox = (function () {
 	var content      =  $('#content');
 	var description  =  $('#beschrijving');
 	var close        =  $('#close');
-
 	
+	
+	function openContentbox ()
+	{
 		// Voeg slide richting toe aan contentbox
-		content.addClass(hrSettings.slideEffect);
+		content.addClass(hrSettings.slideEffect).animate({
+      	width: hrSettings.width+"%"
+      	}, hrSettings.speed, function() {
+      	});;
 
 		// Plaats de close button binnen de contentbox
 		close.addClass(hrSettings.closePosition);
@@ -34,21 +39,15 @@ var hdrContentbox = (function () {
 		content.css("background-color", hrSettings.background);
 
 		// Voeg background color toe aan contentbox
-		close.css("background-color", hrSettings.background);
+		close.css("background-color", hrSettings.background).fadeIn(500);
 
 		// Voegt de schaduw om de content heen
-		shade.addClass(hrSettings.ShadingBox);
-	
+		shade.addClass(hrSettings.ShadingBox).fadeIn(500);;
+   	
+    	description.delay(500).fadeIn(500);   
 
-	function openContentbox ()
-	{
- 		shade.fadeIn(500);
-   		content.animate({
-      	width: hrSettings.width+"%"
-      	}, hrSettings.speed, function() {
-      	});
-    	description.delay(500).fadeIn(500);
-    	close.fadeIn(500);
+    	var message = 'succes';
+    	console.log(message); 
 	};
 
 
@@ -56,7 +55,7 @@ var hdrContentbox = (function () {
 
 $(document).on("click", ".item", openContentbox)
 
-console.log(Style);
+
 
 
 })();
