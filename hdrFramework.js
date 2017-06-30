@@ -23,7 +23,7 @@ var hdrContentbox = (function () {
 	var description  =  $('#beschrijving');
 	var close        =  $('#close');
 
-	var Style = function (){
+	
 		// Voeg slide richting toe aan contentbox
 		content.addClass(hrSettings.slideEffect);
 
@@ -38,24 +38,20 @@ var hdrContentbox = (function () {
 
 		// Voegt de schaduw om de content heen
 		shade.addClass(hrSettings.ShadingBox);
-	};
+	
 
 	function openContentbox ()
 	{
  		shade.fadeIn(500);
-
-    content.animate({
-      width: hrSettings.width+"%"
-      }, hrSettings.speed, function() {
-      });
-
-    description.delay(500).fadeIn(500);
-
-
-    close.fadeIn(500);
+   		content.animate({
+      	width: hrSettings.width+"%"
+      	}, hrSettings.speed, function() {
+      	});
+    	description.delay(500).fadeIn(500);
+    	close.fadeIn(500);
 	};
 
-	
+
 
 
 $(document).on("click", ".item", openContentbox)
