@@ -8,20 +8,20 @@ The easist way to use contentbox.js is to put the tag with tags in your html pag
 Tag for HTML Contentbox element
 ```
 <body>
-<div class="Contentbox">
-	<div id="schaduw">
+<div class="hdr-contentbox">
+	<div id="shade">
 	</div>
 
-	<div id="content">
-		<div id="beschrijving">
-			<h1></h1>
-			<p></p>
+	<div id="hdr-content">
+		<div id="hdr-description">
 		</div>
 
-		<div id="close">
+		<div id="hdr-close">
+		<p class="closebutton"></p>
 		</div>
 	</div>
-</div>	
+</div>
+	
 <body>
 
 ```
@@ -29,13 +29,14 @@ Tag for HTML Contentbox element
 Tags for HTML items clicked
 ```
 <article>
-	<div  onclick="clicked(this);" class="item" id="1"><img src="images/doelgroep.png"></div>
-	<div  class="item" id="2"><img src="images/concepting.png"></div>
-	<div  class="item" id="3"><img src="images/framework.png"></div>
-	<div  class="item" id="4"><img src="images/framework-kennis.png"></div>
-	<div  class="item" id="5"><img src="images/SEO.png"></div>
-	<div  class="item" id="6"><img src="images/ysp2.png"></div>
+	<div  class="hdr-item" id="1"><img src="..."></div>
+	<div  class="hdr-item" id="2"><img src="..."></div>
+	<div  class="hdr-item" id="3"><img src="..."></div>
+	<div  class="hdr-item" id="4"><img src="..."></div>
+	<div  class="hdr-item" id="5"><img src="..."></div>
+	<div  class="hdr-item" id="6"><img src="..."></div>
 </article>
+
 
 ```
 
@@ -45,33 +46,71 @@ This are the default settings given to the contentbox
 
 ```
 var hrSettings = {
-
-width:              50, //kies tussen 25 en 100 
-opacity:            0.2, //kies een opacity tussen 0.0 en 1.0
-speed:              500, // kies een snelheid voor de animatie
-slideEffect:        'fromRight', // kies tussen fromLeft of fromRight
-closePosition:      'closeRight', // kies tussen closeLeft en closeRight
-background:         '#e3e3e3',
-ShadingBox:         'ShadingBox'
-
+	width:              50, 		//	The width for the contentbox in %
+	opacity:            0.2, 		//	Opacity for the background shade
+	speed:              500, 		//	Speed for the animation
+	slideEffect:        'fromRight', 	// 	The direction the contentbox slides in
+	closePosition:      'closeRight', 	// 	The position of the close button
+	background:         '#e3e3e3',		//	Background of the contentbox
+	ShadingBox:         'ShadingBox' 	//	Variable for the shading in CSS
 };
 
 ```
 
 You can adjust the settings to your own preferences, just change add the following script to your html page and change the values.
-
+This is an example how you can change the deafult settings to your own personal setting:
 ```
 <script type="text/javascript">
 
 	var hrCustoms = {
 
-	width: 		20, 
-	opacity: 	0.8,
-	speed: 		1000,
+	width: 		70, 
+	slideEffect:	'fromLeft',
+	closePosition:	'closeLeft',
+	background:	'#303030'
 
 	};
 
 </script>
+
+```
+
+The personal settings above wil overwrite the default settins. Settings you didn't adjust wil be taken form the default settings and a combination of them wil be the styling of your contentbox.
+
+============ Framework insight ============
+
+hdrFramework.js is written as a private function. This means no other function or scripts can allow to use the variabels from this framework. The result is that your data inside the framework is safe and there can't be any problems with other script, because they can't reach the functions inside hdrFramework.js. Example on how this can be done:
+
+```
+var hdrContentbox = (function () {
+
+	// The code and functions come inside here.
+	// Other scripts can't acces these functions
+
+}());
+
+```
+
+The framework also had some local global variables. This means they can be used trough all of the code inside of var hdrContentbox but can't be used outside of it. Als the functions in hdrContentbox are private so your data wil be safe. This is based on the Javascript-module-pattern. Example on how this can be done:
+
+```
+var openContentbox = function(){
+
+	// This is the code that makes the function private
+	// Everything thats inside this code, like variables, cant be used outside this function
+	// Variables outside this function are 'local global' for the framework and can be used inside this function and the other 		   functions.
+};
+
+```
+
+After the functions have been declared and are ready to be used there is one more thing to do. The onclick function that makes all the other functions work when you click on .hdr-item. Example on how this is done:
+
+```
+$(document).on("click", ".hdr-item", openContentbox)
+	   .on("click", "#hdr-close", closeContentbox)
+	   .on("click", "#shade", closeContentbox);
+
+	   // The object that fires the onclick fires the function that is assigned to it	
 
 ```
 
