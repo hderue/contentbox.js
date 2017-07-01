@@ -57,7 +57,17 @@ var hrSettings = {
 
 ```
 
-You can adjust the settings to your own preferences, just change add the following script to your html page and change the values.
+You can adjust the settings to your own preferences, just add the following script to your html page and change the values.
+```
+<script type="text/javascript">
+
+	var hrCustoms = {
+	};
+
+</script>
+
+```
+
 This is an example how you can change the deafult settings to your own personal setting:
 ```
 <script type="text/javascript">
@@ -75,7 +85,7 @@ This is an example how you can change the deafult settings to your own personal 
 
 ```
 
-The personal settings above wil overwrite the default settins. Settings you didn't adjust wil be taken form the default settings and a combination of them wil be the styling of your contentbox.
+The personal settings above wil overwrite the default settings. Settings you didn't adjust wil be taken form the default settings and a combination of them wil be the styling of your contentbox.
 
 ============ Framework insight ============
 
@@ -116,7 +126,7 @@ $(document).on("click", ".hdr-item", openContentbox)
 
 ============ Demo ============
 
-www.hderue.nl/Framework/
+http://www.hderue.nl/Framework/contentbox.js/index2.html
 
 ============ Motivation ============
 
